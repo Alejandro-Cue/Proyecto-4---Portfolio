@@ -1,0 +1,476 @@
+@use '../abstracts/index' as abs;
+
+.main  {
+    text-align: center;
+    padding: 0 10px;
+    @include abs.breakpoint(desktop) {
+        margin: 0 100px;
+    }
+    &__container {
+        position: relative;
+        margin-bottom: 120px;
+        @include abs.breakpoint(tablet) {
+            position: absolute;
+            width: 65%;
+            top: 150px;
+            left: 12px;
+            z-index: 2;        
+        }
+        @include abs.breakpoint(desktop) {
+            position: absolute;
+            width: 60%;
+            top: 150px;
+            left: 110px;
+            z-index: 2;        
+        }  
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;         
+            left: 0;
+            width: 100%;       
+            height: 2px;       
+            background-color: abs.$white-color;
+            @include abs.breakpoint(tablet) {
+                bottom: -100px;
+                width: 150%;         
+            }
+            @include abs.breakpoint(desktop) {
+                width: 139%;
+                bottom: -150px;
+            }
+            
+            
+        }
+    }
+        
+    &__title {
+        color: abs.$white-color;
+        padding: 5px 10px;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -1.14px;
+        margin-bottom: 20px;
+        @include abs.breakpoint(tablet) {
+            font-size: 72px;
+            line-height: 72px;
+            text-align: left;
+        }
+        span{
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;         
+                left: -3px;
+                width: 103%;       
+                height: 5px;       
+                background-color: abs.$green-color; 
+            }
+        }
+        @include abs.breakpoint(desktop) {
+            font-size: 88px;
+            line-height: 88px;
+            letter-spacing: -2.5px;
+            text-align: left;
+            margin-bottom: 43px;
+        }
+        
+    }
+    &__description {
+        color: abs.$grey-color;
+        padding: 5px 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 24px;
+        @include abs.breakpoint(tablet) {
+            font-size: 18px;
+            line-height: 28px;
+            text-align: left;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        @include abs.breakpoint(desktop) {
+            width: 60%;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: left;
+            margin-bottom: 66px;
+
+        }
+    }
+    .button {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 2.29px;
+        color: abs.$white-color;
+        text-decoration: none;
+        position: relative;
+        @include abs.breakpoint(tablet) {
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+        @include abs.breakpoint(desktop) {
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+        &::after {
+                content: '';
+                position: absolute;
+                bottom: -20px;         
+                left: 0;
+                width: 100%;       
+                height: 2px;       
+                background-color: abs.$green-color;
+                transition: background-color 0.5s ease;
+                @include abs.breakpoint(tablet) {
+                    bottom: -20px;
+                    width: 23%;         
+                } 
+                @include abs.breakpoint(desktop) {
+                    bottom: -10px;
+                    width: 17%
+                }
+            
+        }
+        &:hover {
+            transition: transform ease 0.5s;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -20px;         
+                left: 0;
+                width: 100%;       
+                height: 2px;       
+                background-color: purple;
+                transform: scale(1.05);
+                @include abs.breakpoint(tablet) {
+                    bottom: -20px;
+                    width: 23%;         
+                }
+                @include abs.breakpoint(desktop) {
+                    bottom: -10px;
+                    width: 17%;
+                } 
+            }
+        }
+        
+    }
+
+    section {
+        position: relative;
+        margin-bottom: 100px;
+        @include abs.breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 50px;
+        }
+        @include abs.breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 50px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 465px;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            background: url('../../img/elipses-section.svg') no-repeat center center;
+            background-size: contain;
+            z-index: -1;
+            opacity: 0.7;
+            &:last-of-type  {
+                display: none;
+            }
+            @include abs.breakpoint(tablet) {
+                top: 400px;
+                width: 25%;
+                height: 25%;
+                right: -30px;
+            }
+            @include abs.breakpoint(desktop) {
+                top: 170px;
+                right: -250px;
+            }
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -35px;         
+            left: 0;
+            width: 100%;       
+            height: 2px;       
+            background-color: abs.$white-color;
+            @include abs.breakpoint(tablet) {
+                display: none;
+            }
+            @include abs.breakpoint(desktop) {
+                display: none;
+            }
+            &:last-of-type {
+                display: none;
+            }
+
+        }
+        .item {
+            padding: 5px 10px;
+            margin-bottom: 24px;
+            &__title {
+                color: abs.$white-color;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 40px;
+                letter-spacing: -1px;
+                @include abs.breakpoint(tablet) {
+                    font-size: 48px;
+                    line-height: 56px;
+                    letter-spacing: -1.5px;
+                    text-align: start;
+                    margin-bottom: 20px;
+                }
+                @include abs.breakpoint(desktop) {
+                    font-size: 48px;
+                    line-height: 56px;
+                    text-align: start;
+                    letter-spacing: -1.5px;
+                    margin-bottom: 14px;
+                }
+                
+            }
+            &__description {
+                color: abs.$grey-color;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 26px;
+                @include abs.breakpoint(tablet) {
+                    font-size: 18px;
+                    line-height: 28px;
+                    text-align: start;
+                } 
+                @include abs.breakpoint(desktop) {
+                    font-size: 18px;
+                    line-height: 28px;
+                    text-align: start;
+                }               
+            }
+
+        }
+
+    }
+    .hero {
+        @include abs.breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 49%);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+        @include abs.breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: auto;
+            gap: 30px;
+        }
+        &__container {
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            @include abs.breakpoint(tablet) {
+                grid-column: 1 / -1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            @include abs.breakpoint(desktop) {
+                grid-column: 1 / -1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+        }
+        &__title {
+            color: abs.$white-color;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: -1.15px;
+            @include abs.breakpoint(desktop) {
+                font-size: 88px;
+                line-height: 88px;
+                letter-spacing: -2.5px;
+                font-weight: 700;
+            }
+        }
+        &__button {
+            text-decoration: none;
+            color: abs.$white-color;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 2.29px;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;         
+                left: 0;
+                width: 100%;       
+                height: 2px;       
+                background-color: abs.$green-color;
+                transition: background-color 0.5s ease;
+                @include abs.breakpoint(tablet) {
+                    bottom: -5px;
+                }
+                @include abs.breakpoint(desktop) {
+                    bottom: -10px;
+                }
+                
+            }
+            &:hover {
+            transition: transform ease 0.5s;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;         
+                    left: 0;
+                    width: 100%;       
+                    height: 2px;       
+                    background-color: purple;
+                    transform: scale(1.05);
+                    @include abs.breakpoint(tablet) {
+                        bottom: -6px;
+                    } 
+                    @include abs.breakpoint(desktop) {
+                        bottom: -10px;
+                    }
+                }
+            }
+        }
+
+        &__projects {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 10px;
+            padding-left: 6px;
+            padding-right: 6px;
+            position: relative;
+            overflow: hidden;
+            &-title {
+                color: abs.$white-color;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                margin-bottom: 7px;
+            }
+            &-skill {
+                display: flex;
+                justify-content: flex-start;
+                gap: 18px;
+                color: abs.$grey-color;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 20px;
+
+            }
+            &-img {
+                @include abs.breakpoint(desktop) {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    transition: opacity 0.4s ease, transform 0.4s ease;
+                }
+                
+            }
+            &-link {
+                margin-bottom: 50px;
+                display: flex;
+                justify-content:flex-start;
+                gap: 20px;
+                @include abs.breakpoint(desktop) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    opacity: 0;
+                    pointer-events: none; 
+                    transition: opacity 0.4s ease
+                }
+                &-1, &-2 {
+                    text-decoration: none;
+                    color: abs.$white-color;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 28px;
+                    margin-bottom: 60px;
+
+                    &:hover {
+                        background-color: abs.$green-color, 10%;
+                        transform: scale(1.05);
+                    }
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;         
+                        left: 0;
+                        width: 100%;       
+                        height: 2px;       
+                        background-color: abs.$green-color;
+                        transition: background-color 0.5s ease; 
+                    }
+                    &:hover {
+                        transition: transform ease 0.5s;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;         
+                            left: 0;
+                            width: 100%;       
+                            height: 2px;       
+                            background-color: purple;
+                            transform: scale(1.05); 
+                        }
+                    }
+                }
+            }
+        }
+
+        @include abs.breakpoint(desktop) {
+            .hero__projects {
+                position: relative;
+
+                &:hover {
+                    .hero__projects-img {
+                        opacity: 0.3;
+                        transform: scale(1.05);
+                    }
+
+                    .hero__projects-link {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+            }
+        }
+            
+        
+    }
+}

@@ -1,0 +1,9 @@
+@use '../abstracts/index' as abs;
+
+html * {
+    font-family: abs.$spacegrotesk;
+}
+ 
+body {
+    overflow-x: hidden;
+} 

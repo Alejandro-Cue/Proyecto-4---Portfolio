@@ -1,0 +1,159 @@
+@use '../abstracts/index' as abs;
+
+.header {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include abs.breakpoint(tablet) {
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: auto auto;
+            justify-content: space-between;
+            align-items: start; 
+        }
+        @include abs.breakpoint(desktop) {
+            margin: 0 auto;
+            max-width: 1110px;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: auto auto;
+            justify-content: space-between;
+            align-items: start; 
+        }
+
+    }
+
+    &__logo{
+        padding: 10px 23px;
+        background-color: rgba(88, 88, 88, 0.1);
+        @include abs.breakpoint(tablet) {
+            background-color: abs.$body-color;
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+            justify-self: flex-start;
+            align-self: start;
+        }
+        @include abs.breakpoint(desktop) {
+            background-color: abs.$body-color;
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+            justify-self: flex-start;
+            align-self: start;
+        }
+
+        img {
+            justify-content: center;
+            @include abs.breakpoint(tablet) {
+                width: 172px;
+                height: auto;
+            }
+            @include abs.breakpoint(desktop) {
+                width: 172px;
+                height: auto;
+                padding-top: 10px;
+            }
+        }
+
+        
+    }
+
+    &__nav {
+        padding: 0 10px;
+        background-color: rgba(88, 88, 88, 0.1);
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        @include abs.breakpoint(tablet) {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            justify-self: flex-end;
+            align-self: center;
+            width: 100%;
+            background-color: rgba(36, 36, 36, 1);
+            ul{
+                li{
+                    img{
+                        width: 30px;
+                        height: auto;}
+                        margin-left: 10px;
+                        
+                }
+            }
+        }
+        @include abs.breakpoint(desktop) {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            justify-self: end;
+            align-self: end;
+            margin: 0;
+            padding: 0;
+            padding-right: 30px;
+            width: 100%;
+            background-color: rgba(36, 36, 36, 1);
+            ul{ 
+                display: flex;
+                justify-content: flex-end;
+                
+                li{
+                    img{
+                        width: 30px;
+                        height: auto;
+                        padding-top: 15px;
+
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    &__img {
+        padding-top: 50px;
+        background-color: rgba(88, 88, 88, 0.2);
+        margin-bottom: 40px;
+        @include abs.breakpoint(tablet) {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            justify-self: flex-end;
+            align-self: center; 
+            width: 100%;
+            background-color: rgba(36, 36, 36, 1);
+            padding: 0;
+            margin-bottom: 220px;
+            img {
+                padding-top: 50px;
+                width: 100%;
+                height: auto;
+            }
+            
+        }
+        @include abs.breakpoint(desktop) {
+            margin-bottom:  180px;         
+            &::after {
+                content: '';
+                position: absolute;
+                top: 480px;
+                right: 470px;
+                width: 129px;
+                height: 129px;
+                background: url('../../img/complete-oval.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: 1;
+            }
+            img {
+                width: 95%;
+                height: auto;
+            }
+        }
+    }
+
+}
