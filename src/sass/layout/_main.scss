@@ -1,471 +1,477 @@
-@use '../abstracts/index' as abs;
-
-.main  {
-    text-align: center;
-    padding: 0 10px;
+@use '../abstracts' as abs;
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 1rem;
+    @include abs.breakpoint(tablet) {
+        display: block;
+    }
     @include abs.breakpoint(desktop) {
-        margin: 0 100px;
+        display: block;
+        margin-left: 9rem;
+        margin-right: 8rem;
     }
     &__container {
-        position: relative;
-        margin-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1rem 6rem 1rem;
+        border-bottom: 2px solid abs.$white-color;
         @include abs.breakpoint(tablet) {
-            position: absolute;
-            width: 65%;
-            top: 150px;
-            left: 12px;
-            z-index: 2;        
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 29.7rem;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            border-bottom: 0;
         }
         @include abs.breakpoint(desktop) {
-            position: absolute;
-            width: 60%;
-            top: 150px;
-            left: 110px;
-            z-index: 2;        
-        }  
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;         
-            left: 0;
-            width: 100%;       
-            height: 2px;       
-            background-color: abs.$white-color;
-            @include abs.breakpoint(tablet) {
-                bottom: -100px;
-                width: 150%;         
-            }
-            @include abs.breakpoint(desktop) {
-                width: 139%;
-                bottom: -150px;
-            }
-            
-            
+            display: flex;
+            flex-direction: column;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 50rem;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 12rem;
+            text-align: left;
+            border-bottom: 0;
         }
     }
-        
     &__title {
-        color: abs.$white-color;
-        padding: 5px 10px;
-        font-weight: 700;
         font-size: 40px;
+        font-weight: 700;
+        text-align: center;
         line-height: 40px;
         letter-spacing: -1.14px;
-        margin-bottom: 20px;
-        @include abs.breakpoint(tablet) {
-            font-size: 72px;
-            line-height: 72px;
-            text-align: left;
-        }
-        span{
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;         
-                left: -3px;
-                width: 103%;       
-                height: 5px;       
-                background-color: abs.$green-color; 
+        color: abs.$white-color;
+        margin-bottom: 1.5rem;
+        span {
+            border-bottom: 2px solid abs.$green-color;
+            padding-bottom: 0;
+            @include abs.breakpoint(tablet) {
+                border-bottom: 5px solid abs.$green-color;
+                padding-bottom: 0;
+            }
+            @include abs.breakpoint(desktop) {
+                border-bottom: 5px solid abs.$green-color;
+                padding-bottom: 0;
+                width: 100%;
             }
         }
+        @include abs.breakpoint(tablet) {
+            text-align: left;
+            font-size: 72px;
+            line-height: 72px;
+            letter-spacing: -2.05px;
+            margin-bottom: 4rem;
+            width: 100%
+
+        }
         @include abs.breakpoint(desktop) {
+            text-align: left;
             font-size: 88px;
             line-height: 88px;
             letter-spacing: -2.5px;
-            text-align: left;
-            margin-bottom: 43px;
+            margin-bottom: 6rem;
+            width: 100%;
+            z-index: 1;
         }
-        
     }
     &__description {
-        color: abs.$grey-color;
-        padding: 5px 10px;
-        font-weight: 400;
         font-size: 16px;
+        font-weight: 500;
+        text-align: center;
         line-height: 26px;
-        margin-bottom: 24px;
+        letter-spacing: -0.5px;
+        color: abs.$grey-color;
+        margin-bottom: 2rem;
         @include abs.breakpoint(tablet) {
+            text-align: left;
             font-size: 18px;
             line-height: 28px;
-            text-align: left;
-            margin-top: 100px;
-            margin-bottom: 100px;
+            letter-spacing: 0;
+            max-width: 28rem;
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 2.5rem;
+            align-self: start;
+
         }
         @include abs.breakpoint(desktop) {
-            width: 60%;
+            text-align: left;
             font-size: 18px;
             line-height: 28px;
-            text-align: left;
-            margin-bottom: 66px;
-
+            letter-spacing: 0;
+            max-width: 28rem;
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 4.5rem;
+            align-self: start;
         }
     }
     .button {
-        font-weight: 700;
+        text-decoration: none;
         font-size: 16px;
+        font-weight: 700;
         line-height: 26px;
         letter-spacing: 2.29px;
         color: abs.$white-color;
-        text-decoration: none;
-        position: relative;
+        border-bottom: 2px solid abs.$green-color;
+        padding-bottom: 1.5rem;
+        transition: all 0.3s ease;
         @include abs.breakpoint(tablet) {
-            display: flex;
-            justify-content: flex-start;
-            padding: 10px;
+            align-self: start;
         }
         @include abs.breakpoint(desktop) {
-            display: flex;
-            justify-content: flex-start;
-            padding: 10px;
-        }
-        &::after {
-                content: '';
-                position: absolute;
-                bottom: -20px;         
-                left: 0;
-                width: 100%;       
-                height: 2px;       
-                background-color: abs.$green-color;
-                transition: background-color 0.5s ease;
-                @include abs.breakpoint(tablet) {
-                    bottom: -20px;
-                    width: 23%;         
-                } 
-                @include abs.breakpoint(desktop) {
-                    bottom: -10px;
-                    width: 17%
-                }
-            
+            align-self: start;
         }
         &:hover {
-            transition: transform ease 0.5s;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -20px;         
-                left: 0;
-                width: 100%;       
-                height: 2px;       
-                background-color: purple;
-                transform: scale(1.05);
+            color: abs.$green-color;
+            border-bottom: 2px solid purple;
+            padding-bottom: 0;
+        }
+    }
+    .items {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        @include abs.breakpoint(tablet) {
+            border-top: 2px solid abs.$white-color;
+            padding-top: 3rem; 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            grid-template-rows: auto;
+            align-items: start;
+            justify-content: start;
+        }
+        @include abs.breakpoint(desktop) {
+            border-top: 2px solid abs.$white-color;
+            padding-top: 3rem; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            grid-template-rows: auto;
+            align-items: start;
+            justify-content: start;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+            @include abs.breakpoint(tablet) {
+                align-items: start;
+                padding-left: 1rem;
+                margin-bottom: 3rem;
+            }
+            @include abs.breakpoint(desktop) {
+                align-items: start;
+                padding-left: 1rem;
+                margin-bottom: 3rem;
+            }
+            h2{
+                color: abs.$white-color;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 40px;
+                letter-spacing: -1px;
+                text-align: center;
                 @include abs.breakpoint(tablet) {
-                    bottom: -20px;
-                    width: 23%;         
+                    font-size: 48px;
+                    line-height: 56px;
+                    letter-spacing: -1.5px;
+                    text-align: left;
                 }
                 @include abs.breakpoint(desktop) {
-                    bottom: -10px;
-                    width: 17%;
-                } 
+                    font-size: 48px;
+                    line-height: 56px;
+                    letter-spacing: -1.5px;
+                    text-align: left;
+                }
+            }
+            p {
+                color: abs.$grey-color;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 26px;
+                letter-spacing: 0;
+                text-align: center;
+                @include abs.breakpoint(tablet) {
+                    font-size: 18px;
+                    line-height: 28px;
+                    letter-spacing: 0;
+                    text-align: left;
+                }
+                @include abs.breakpoint(desktop) {
+                    font-size: 18px;
+                    line-height: 28px;
+                    letter-spacing: 0;
+                    text-align: left;
+                }
+            }
+        }
+        .elipses_section {
+            position: absolute;
+            width: 12.5rem;
+            top: 69.4rem;
+            right: 0;
+            z-index: -1;
+            opacity: 0.7;
+            @include abs.breakpoint(desktop) {
+                width: 16.5rem;
+                top: 74rem;
+                right: 0;
+                z-index: -1;
+                opacity: 0.7;
+                
             }
         }
         
     }
-
-    section {
-        position: relative;
-        margin-bottom: 100px;
+    .hero{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+        padding: 0.1rem;
+        padding-top: 5rem;
+        width: 100%;
+        border-top: 2px solid abs.$white-color;
         @include abs.breakpoint(tablet) {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 4rem;
             display: grid;
-            grid-template-columns: repeat(2,1fr);
-            grid-template-rows: repeat(3, auto);
-            gap: 50px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            grid-template-rows: auto;
+            align-items: start;
+            justify-content: start;
         }
         @include abs.breakpoint(desktop) {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 6rem;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(2, auto);
-            gap: 50px;
-        }
-        &::before {
-            content: '';
-            position: absolute;
-            top: 465px;
-            right: 0;
-            width: 50%;
-            height: 50%;
-            background: url('../../img/elipses-section.svg') no-repeat center center;
-            background-size: contain;
-            z-index: -1;
-            opacity: 0.7;
-            &:last-of-type  {
-                display: none;
-            }
-            @include abs.breakpoint(tablet) {
-                top: 400px;
-                width: 25%;
-                height: 25%;
-                right: -30px;
-            }
-            @include abs.breakpoint(desktop) {
-                top: 170px;
-                right: -250px;
-            }
-        }
-        &::after{
-            content: '';
-            position: absolute;
-            bottom: -35px;         
-            left: 0;
-            width: 100%;       
-            height: 2px;       
-            background-color: abs.$white-color;
-            @include abs.breakpoint(tablet) {
-                display: none;
-            }
-            @include abs.breakpoint(desktop) {
-                display: none;
-            }
-            &:last-of-type {
-                display: none;
-            }
-
-        }
-        .item {
-            padding: 5px 10px;
-            margin-bottom: 24px;
-            &__title {
-                color: abs.$white-color;
-                font-weight: 700;
-                font-size: 32px;
-                line-height: 40px;
-                letter-spacing: -1px;
-                @include abs.breakpoint(tablet) {
-                    font-size: 48px;
-                    line-height: 56px;
-                    letter-spacing: -1.5px;
-                    text-align: start;
-                    margin-bottom: 20px;
-                }
-                @include abs.breakpoint(desktop) {
-                    font-size: 48px;
-                    line-height: 56px;
-                    text-align: start;
-                    letter-spacing: -1.5px;
-                    margin-bottom: 14px;
-                }
-                
-            }
-            &__description {
-                color: abs.$grey-color;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 26px;
-                @include abs.breakpoint(tablet) {
-                    font-size: 18px;
-                    line-height: 28px;
-                    text-align: start;
-                } 
-                @include abs.breakpoint(desktop) {
-                    font-size: 18px;
-                    line-height: 28px;
-                    text-align: start;
-                }               
-            }
-
-        }
-
-    }
-    .hero {
-        @include abs.breakpoint(tablet) {
-            display: grid;
-            grid-template-columns: repeat(2, 49%);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             grid-template-rows: auto;
-            gap: 20px;
+            align-items: start;
+            justify-content: start;
         }
-        @include abs.breakpoint(desktop) {
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
-            grid-template-rows: auto;
-            gap: 30px;
-        }
-        &__container {
-            padding: 0 10px;
+
+        &__container{
             display: flex;
+            flex-direction: row;
+            align-items: flex-start;
             justify-content: space-between;
-            margin-bottom: 40px;
+            padding: 1rem 1rem;
             @include abs.breakpoint(tablet) {
-                grid-column: 1 / -1;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                margin-bottom: 3rem;
+                grid-column: 1 / 3;
             }
             @include abs.breakpoint(desktop) {
-                grid-column: 1 / -1;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                margin-bottom: 3rem;
+                grid-column: 1 / 3;
             }
-            
-        }
-        &__title {
-            color: abs.$white-color;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 40px;
-            letter-spacing: -1.15px;
-            @include abs.breakpoint(desktop) {
-                font-size: 88px;
-                line-height: 88px;
-                letter-spacing: -2.5px;
+            h2{
+                color: abs.$white-color;
+                font-size: 40px;
                 font-weight: 700;
-            }
-        }
-        &__button {
-            text-decoration: none;
-            color: abs.$white-color;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 26px;
-            letter-spacing: 2.29px;
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;         
-                left: 0;
-                width: 100%;       
-                height: 2px;       
-                background-color: abs.$green-color;
-                transition: background-color 0.5s ease;
+                line-height: 40px;
+                letter-spacing: -1.14px;
+                text-align: left;
                 @include abs.breakpoint(tablet) {
-                    bottom: -5px;
+                    font-size: 72px;
+                    line-height: 72px;
+                    letter-spacing: -2.05px;
                 }
                 @include abs.breakpoint(desktop) {
-                    bottom: -10px;
+                    font-size: 88px;
+                    line-height: 88px;
+                    letter-spacing: -2.5px;
                 }
-                
             }
-            &:hover {
-            transition: transform ease 0.5s;
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0px;         
-                    left: 0;
-                    width: 100%;       
-                    height: 2px;       
-                    background-color: purple;
-                    transform: scale(1.05);
-                    @include abs.breakpoint(tablet) {
-                        bottom: -6px;
-                    } 
-                    @include abs.breakpoint(desktop) {
-                        bottom: -10px;
-                    }
+            .hero__button {
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 26px;
+                letter-spacing: 2.29px;
+                color: abs.$white-color;
+                border-bottom: 2px solid abs.$green-color;
+                padding-bottom: 1.5rem;
+                transition: all 0.3s ease;
+                @include abs.breakpoint(tablet) {
+                    align-self: center;
+                    
+                }
+                @include abs.breakpoint(desktop) {
+                    align-self: center;
+                    
+                }
+                &:hover {
+                    color: abs.$green-color;
+                    border-bottom: 2px solid purple;
+                    padding-bottom: 0;
                 }
             }
         }
-
-        &__projects {
+        .hero__projects {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            text-align: left;
-            gap: 10px;
-            padding-left: 6px;
-            padding-right: 6px;
-            position: relative;
-            overflow: hidden;
-            &-title {
-                color: abs.$white-color;
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 32px;
-                margin-bottom: 7px;
-            }
-            &-skill {
+            align-items: flex-start;
+            gap: 0.5rem;
+            @include abs.breakpoint(tablet) {
                 display: flex;
-                justify-content: flex-start;
-                gap: 18px;
-                color: abs.$grey-color;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 28px;
-                margin-bottom: 20px;
-
+                flex-direction: column;
+                align-items: start;
+                gap: 1rem;
             }
-            &-img {
-                @include abs.breakpoint(desktop) {
-                    display: block;
-                    width: 100%;
-                    height: auto;
-                    transition: opacity 0.4s ease, transform 0.4s ease;
+            @include abs.breakpoint(desktop) {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 1rem;
+                position: relative;
+            }
+            &:hover {
+                .hero__projects-img {
+                    filter: brightness(0.3);
                 }
-                
+                .hero__projects-link {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
+            
+            &-img {
+                width: 100%;
+                margin-bottom: 1rem;
+                @include abs.breakpoint(desktop) {
+                    transition: filter 0.3s ease, opacity 0.3s ease;
+                }
+            }
+
+            &-title{
+                color: abs.$white-color;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 40px;
+                letter-spacing: -1px;
+                text-align: left;
+                @include abs.breakpoint(tablet) {
+                    font-size: 24px;
+                    line-height: 32px;
+                    letter-spacing: 0px;
+                }
+                @include abs.breakpoint(desktop) {
+                    font-size: 24px;
+                    line-height: 32px;
+                    letter-spacing: 0px;
+                }
+            }
+
+            &-skill{
+                display:flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 1rem;
+                font-family: abs.$spacegrotesk;
+                color: abs.$grey-color;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 28px;
+                margin-bottom: 1.5rem;
+            }
+            
             &-link {
-                margin-bottom: 50px;
                 display: flex;
-                justify-content:flex-start;
-                gap: 20px;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 2rem;
+                @include abs.breakpoint(tablet) {
+                    justify-content: flex-start;
+                    gap: 2rem;
+                }
                 @include abs.breakpoint(desktop) {
                     position: absolute;
-                    top: 0;
+                    top: 9rem;
                     left: 0;
                     width: 100%;
-                    height: 100%;
+                    height: auto;
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    gap: 20px;
+                    gap: 2rem;
                     opacity: 0;
-                    pointer-events: none; 
-                    transition: opacity 0.4s ease
+                    visibility: hidden;
+                    transition: opacity 0.3s ease, visibility 0.3s ease;
+                    z-index: 10;
+
                 }
-                &-1, &-2 {
+                &-1 {
+                    display: inline-block;
                     text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 26px;
+                    letter-spacing: 2.29px;
                     color: abs.$white-color;
-                    font-weight: 500;
-                    font-size: 18px;
-                    line-height: 28px;
-                    margin-bottom: 60px;
-
-                    &:hover {
-                        background-color: abs.$green-color, 10%;
-                        transform: scale(1.05);
-                    }
-                    
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -10px;         
-                        left: 0;
-                        width: 100%;       
-                        height: 2px;       
-                        background-color: abs.$green-color;
-                        transition: background-color 0.5s ease; 
+                    border-bottom: 2px solid abs.$green-color;
+                    padding-bottom: 1.5rem;
+                    transition: padding 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+                    @include abs.breakpoint(desktop) {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 28px;
+                        display: inline-block;
+                        text-decoration: none;
                     }
                     &:hover {
-                        transition: transform ease 0.5s;
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -10px;         
-                            left: 0;
-                            width: 100%;       
-                            height: 2px;       
-                            background-color: purple;
-                            transform: scale(1.05); 
-                        }
+                        color: abs.$green-color;
+                        border-bottom: 2px solid purple;
+                        padding-bottom: 0 !important;
                     }
                 }
-            }
-        }
-
-        @include abs.breakpoint(desktop) {
-            .hero__projects {
-                position: relative;
-
-                &:hover {
-                    .hero__projects-img {
-                        opacity: 0.3;
-                        transform: scale(1.05);
+                &-2 {
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 26px;
+                    letter-spacing: 2.29px;
+                    color: abs.$white-color;
+                    border-bottom: 2px solid abs.$green-color;
+                    padding-bottom: 1.5rem;
+                    transition: padding 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+                    @include abs.breakpoint(desktop) {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 28px;
+                        display: inline-block;
+                        text-decoration: none;
                     }
-
-                    .hero__projects-link {
-                        opacity: 1;
-                        pointer-events: all;
+                    &:hover {
+                        color: abs.$green-color;
+                        border-bottom: 2px solid purple;
+                        padding-bottom: 0.1rem !important;
                     }
                 }
             }

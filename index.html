@@ -14,7 +14,7 @@
 
     <meta name="keywords" content="community, collaboration, skills, projects, frameworks, portfolio, Adam Keyes">
 
-    <meta name="author" content="Adam Keyes">
+    <meta name="author" content="Adam Keyes"> 
 
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
@@ -51,10 +51,20 @@
         </nav>
         <div class="header__img">
           <picture>
+            <source media="(min-width: 1025px)" srcset="src/img/elipses-header-desktop.svg">
+            <source media="(min-width: 768px)" srcset="src/img/elipses-header-tablet.svg">
+            <img class="elipses" src="src/img/elipses.svg" alt="">
+          </picture>
+          <picture>
             <source media="(min-width: 768px)" srcset="src/img/hombre-tablet.png">
             <source media="(min-width: 1025px)" srcset="src/img/hombre-desktop.png">
-            <img src="src/img/hombre.png" alt="">
+            <img class="hombre" src="src/img/hombre.png" alt="">
           </picture>
+          <picture>
+            <source media="(min-width: 1025px)" srcset="src/img/complete-oval.svg">
+            <img class="ovalo" src="src/img/ovalo.svg" alt="">
+          </picture>
+          
         </div>  
       </div>
     </header>
@@ -89,6 +99,7 @@
           <h2 class="item__title">Sass</h2>
           <p class="item__description">3 Years Experience</p>
         </article>
+        <img class="elipses_section" src="./src/img/elipses-section.svg" alt="">
       </section>
       <div class="hero">
         <div class="hero__container">
@@ -171,7 +182,7 @@
             <a class="hero__projects-link-2" href="">VIEW CODE</a>
           </div>
         </article>
-      </section>
+      </div>
     </main>
     <footer class="footer">
       <div class="footer__container">
@@ -179,12 +190,17 @@
         <p class="footer__description">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
       </div>
       <div class="footer__container-2">
-        <form class="footer__form">
+        <form class="footer__form" novalidate>
           <input type="text" name="name" placeholder="NAME" required>
-          <input type="email" name="email" placeholder="EMAIL" required>
+          <div class="footer__form-group">
+            <input type="email" name="email" placeholder="EMAIL" required>
+            <img class='error-icon' src="./src/img/error-icon.svg" alt="Icono de error">
+            <span class="error-message">Sorry, invalid format here</span>
+          </div>
           <textarea name="message" placeholder="MESSAGE" required></textarea>
           <button type="submit" class="footer__button">SEND MESSAGE</button>
         </form>
+        <img class="elipses-footer" src="./src/img/elipses.svg" alt="">
       </div>
       <div class="footer__container-3">
         <a href="#"><img src="./src/img/adamkeyes-logo.svg" alt="logo de Adam Keyes"></a>
