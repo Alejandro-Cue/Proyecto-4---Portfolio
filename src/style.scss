@@ -1,14 +1,8 @@
-
 @use 'sass/abstracts' as abs; 
 
-@import 'sass/base/base';
 
-@import 'sass/layout';
-
-@import 'sass/components';
-
-@import 'sass/pages';
-
-@import 'sass/themes';
-
-@import 'sass/vendors';
+@use 'sass/base';
+@use 'sass/layout';
+@use 'sass/components';
+@use 'sass/pages';
+@use 'sass/themes';
