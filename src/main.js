@@ -1,4 +1,4 @@
-import './style.css'
+
 import './sass/app.scss'
 import viteLogo from '/vite.svg'
 
